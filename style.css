@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.channel-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.channel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.channel-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.status {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.livestreaming {
+    background-color: green;
+}
+
+.offline {
+    background-color: red;
+}
+
+.status.offline {
+    color: white;
+}
