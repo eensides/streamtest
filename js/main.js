@@ -1,17 +1,16 @@
-// Example usage of the Twitch and YouTube API functions
+// main.js
 
 async function getLiveStatusForChannel(channel) {
     if (channel.platform === 'Twitch') {
         const isLive = await checkTwitchLiveStatus(channel.name);
         return isLive;
     } else if (channel.platform === 'YouTube') {
-        const isLive = await checkYouTubeLiveStatus(channel.name); // You may need to pass the channel ID instead of name
+        const isLive = await checkYouTubeLiveStatus(channel.name); // Replace with channelId for YouTube
         return isLive;
     }
     return false;
 }
 
-// Example function to update channels with live status
 async function updateChannelStatus() {
     const channels = [
         { name: "TwitchChannel1", platform: "Twitch" },
