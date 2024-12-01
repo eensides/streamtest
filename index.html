@@ -4,137 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livestream Channels</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 800px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .channel-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .channel {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .channel-name {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .status {
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        .livestreaming {
-            background-color: green;
-        }
-
-        .offline {
-            background-color: red;
-        }
-
-        .status.offline {
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Livestream Channels</h1>
-        <ul class="channel-list" id="channelList">
-            <!-- Channel items will be dynamically added here -->
-        </ul>
+        <ul class="channel-list" id="channelList"></ul>
     </div>
 
-    <script>
-        // Example channels (replace with actual data or API calls)
-        const channels = [
-            {
-                name: "TwitchChannel1",
-                platform: "Twitch",
-                isLive: true // You would replace this with actual live status from the API
-            },
-            {
-                name: "YouTubeChannel1",
-                platform: "YouTube",
-                isLive: false // Replace this with actual live status from YouTube API
-            },
-            {
-                name: "TwitchChannel2",
-                platform: "Twitch",
-                isLive: false
-            },
-            {
-                name: "YouTubeChannel2",
-                platform: "YouTube",
-                isLive: true
-            }
-        ];
-
-        function updateChannelStatus() {
-            const channelListElement = document.getElementById('channelList');
-            channelListElement.innerHTML = ''; // Clear previous list
-
-            channels.forEach(channel => {
-                const channelItem = document.createElement('li');
-                channelItem.classList.add('channel');
-                
-                const channelName = document.createElement('span');
-                channelName.classList.add('channel-name');
-                channelName.textContent = `${channel.name} (${channel.platform})`;
-                
-                const status = document.createElement('span');
-                status.classList.add('status');
-                if (channel.isLive) {
-                    status.classList.add('livestreaming');
-                    status.textContent = 'Live';
-                } else {
-                    status.classList.add('offline');
-                    status.textContent = 'Offline';
-                }
-
-                channelItem.appendChild(channelName);
-                channelItem.appendChild(status);
-                channelListElement.appendChild(channelItem);
-            });
-        }
-
-        // Call the function to populate the list when the page loads
-        window.onload = updateChannelStatus;
-    </script>
-       <!-- Include the JavaScript files -->
+    <!-- Include the JavaScript files -->
     <script src="js/twitch-api.js"></script>
     <script src="js/youtube-api.js"></script>
-    <script src="js/main.js"></script> <!-- Main file that calls functions from twitch-api.js and youtube-api.js -->
+    <script src="js/main.js"></script>
 </body>
 </html>
